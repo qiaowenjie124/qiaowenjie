@@ -8,13 +8,13 @@ function getGreeting() {
 	const hour = new Date().getHours()
 
 	if (hour >= 6 && hour < 12) {
-		return 'Good Morning'
+		return '你应该知道'
 	} else if (hour >= 12 && hour < 18) {
-		return 'Good Afternoon'
+		return '我必须告诉全世界'
 	} else if (hour >= 18 && hour < 22) {
-		return 'Good Evening'
+		return '你明白吗'
 	} else {
-		return 'Good Night'
+		return '冷知识'
 	}
 }
 
@@ -51,7 +51,7 @@ export default function HiCard() {
 					<img src='/images/avatar.png' className='mx-auto rounded-full' style={{ width: 120, height: 120, boxShadow: ' 0 16px 32px -5px #E2D9CE' }} />
 				</Link>
 				<h1 className='font-averia mt-3 text-2xl'>
-					{greeting} <br /> I'm <span className='text-linear text-[32px]'>{username}</span> , Nice to <br /> meet you!
+					{greeting} <br /> <span className='text-linear text-[32px]'>{username}</span> <br/>是宛如天使的女孩!
 				</h1>
 			</Card>
 		</HomeDraggableLayer>
