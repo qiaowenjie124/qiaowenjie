@@ -24,26 +24,21 @@ import { useSize } from '@/hooks/use-size'
 import { useConfigStore } from '@/app/(home)/stores/config-store'
 import { HomeDraggableLayer } from '@/app/(home)/home-draggable-layer'
 
+
 const list = [
 	{
 		icon: ScrollOutlineSVG,
 		iconActive: ScrollFilledSVG,
-		label: '近期文章',
+		label: '日记',
 		href: '/blog'
 	},
 	{
 		icon: ProjectsOutlineSVG,
 		iconActive: ProjectsFilledSVG,
-		label: '我的项目',
+		label: '链接',
 		href: '/projects'
 	},
-	{
-		icon: AboutOutlineSVG,
-		iconActive: AboutFilledSVG,
-		label: '关于网站',
-		href: '/about'
-	},
-	{
+/*	{
 		icon: ShareOutlineSVG,
 		iconActive: ShareFilledSVG,
 		label: '推荐分享',
@@ -54,7 +49,13 @@ const list = [
 		iconActive: WebsiteFilledSVG,
 		label: '优秀博客',
 		href: '/bloggers'
-	}
+	}, */
+	{
+		icon: AboutOutlineSVG,
+		iconActive: AboutFilledSVG,
+		label: '遇辙',
+		href: '/about'
+	},
 ]
 
 const extraSize = 8
@@ -100,11 +101,16 @@ export default function NavCard() {
 		}
 	}, [form, center, styles, hiCardStyles])
 
-	const size = useMemo(() => {
-		if (form === 'mini') return { width: 64, height: 64 }
-		else if (form === 'icons') return { width: 340, height: 64 }
-		else return { width: styles.width, height: styles.height }
-	}, [form, styles])
+const size = useMemo(() => {
+        if (form === 'mini') return { width: 64, height: 64 }
+        // 1. 修改这里：将写死的 340 改为 236 (减去了两个图标和间距的宽度)
+        else if (form === 'icons') return { width: 236, height: 64 } 
+        else return { 
+            width: styles.width, 
+            // 2. 修改这里：首页卡片高度减去 120 (减去了两个选项卡的高度和间距)
+            height: styles.height - 150 
+        }
+    }, [form, styles])
 
 	useEffect(() => {
 		if (form === 'icons' && activeIndex !== undefined && hoveredIndex !== activeIndex) {
@@ -146,7 +152,7 @@ export default function NavCard() {
 
 					{(form === 'full' || form === 'icons') && (
 						<>
-							{form !== 'icons' && <div className='text-secondary mt-6 text-sm uppercase'>General</div>}
+							{form !== 'icons' && <div className='text-secondary mt-6 text-sm uppercase'></div>}
 
 							<div className={cn('relative mt-2 space-y-2', form === 'icons' && 'mt-0 flex items-center gap-6 space-y-0')}>
 								<motion.div
