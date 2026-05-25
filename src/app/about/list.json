@@ -1,5 +1,27 @@
 {
-	"title": "关于本站",
-	"description": "一个基于 Github 的现代化博客系统",
-	"content": ""
+  "title": "关于本站",
+  "description": "一个基于 Github 的现代化博客系统",
+  "intro": "📦网站基于 Github 仓库完全存储，所有内容版本可控\n\n🚀无后端，无 serverless function，纯静态站点\n\n✏️文章通过可视化 UI 直接编辑并提交到 Github 仓库\n\n🔑所有用户都可以编辑，提交需要 Owner 的 Private Key\n\n## 技术栈\n\n- Next.js\n- React\n- TypeScript\n- Tailwind CSS\n- Motion\n- Github API",
+  "timeline": [
+    {
+      "date": "2023年10月",
+      "title": "项目立项",
+      "content": "决定使用 Next.js 构建一个基于 Github 的纯静态博客系统。"
+    },
+    {
+      "date": "2023年11月",
+      "title": "核心功能完成",
+      "content": "实现了无后端、纯静态渲染，以及通过 UI 直接编辑并提交到 Github 的功能。"
+    },
+    {
+      "date": "2024年1月",
+      "title": "UI 升级与动效",
+      "content": "引入了 Tailwind CSS 和 Motion，完善了视觉体验并正式发布。"
+    },
+    {
+      "date": "至今",
+      "title": "持续维护与优化",
+      "content": "优化响应式设计，修复已知 Bug，持续提升加载速度。"
+    }
+  ]
 }
